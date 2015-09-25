@@ -13,3 +13,7 @@ RUN cd /tmp \
   && mv /tmp/wildfly* /opt \
   && ln -s /opt/wildfly* $JBOSS_HOME \
   && rm /tmp/* -Rf
+
+EXPOSE 8080
+
+CMD ["/opt/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
